@@ -1,6 +1,9 @@
 namespace SpriteKind {
     export const Rainbow = SpriteKind.create()
 }
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    game.showLongText("Move with arrow keys. You deal damage if you hit the small cat while you are moving. You get hurt if you get hit while you are not moving.", DialogLayout.Center)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     if (canCollide) {
         if (sprite.vx != 0 || sprite.vy != 0) {
@@ -18,6 +21,11 @@ info.player2.onLifeZero(function () {
     game.over(true)
 })
 let canCollide = false
+scene.setBackgroundColor(10)
+game.setDialogFrame(assets.image`Rainbow frame`)
+game.showLongText("Rainbow cats", DialogLayout.Top)
+game.showLongText("by Rubén and papá", DialogLayout.Top)
+game.showLongText("Press A for instructions.", DialogLayout.Top)
 canCollide = true
 let rainbow = sprites.create(img`
     ................................
@@ -129,7 +137,6 @@ let cat = sprites.create(img`
     ................................
     ................................
     `, SpriteKind.Player)
-scene.setBackgroundColor(10)
 animation.runImageAnimation(
 cat,
 assets.animation`myAnim`,
