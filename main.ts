@@ -25,7 +25,7 @@ info.player2.onLifeZero(function () {
 let canCollide = false
 scene.setBackgroundColor(10)
 game.setDialogFrame(assets.image`Rainbow frame`)
-game.showLongText("Rainbow cats", DialogLayout.Top)
+game.showLongText("Rainbow cat", DialogLayout.Top)
 game.showLongText("by Rubén and papá", DialogLayout.Top)
 game.showLongText("Press A for instructions.", DialogLayout.Top)
 canCollide = true
