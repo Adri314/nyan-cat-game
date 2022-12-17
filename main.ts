@@ -8,8 +8,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
     if (canCollide) {
         if (sprite.vx != 0 || sprite.vy != 0) {
             info.player2.changeLifeBy(-1)
+            music.playSoundEffect(music.createSoundEffect(WaveShape.Sine, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), SoundExpressionPlayMode.InBackground)
         } else {
             info.player1.changeLifeBy(-1)
+            music.knock.play()
         }
         canCollide = false
     }
