@@ -241,8 +241,8 @@ projectile,
 true
 )
 projectile.setBounceOnWall(true)
-info.player1.setLife(100)
-info.player2.setLife(30)
+info.player1.setLife(4000)
+info.player2.setLife(100)
 game.onUpdate(function () {
     rainbow.setPosition(cat.x - 28, cat.y)
     rainbow2.setPosition(rainbow.x - 36, rainbow.y)
